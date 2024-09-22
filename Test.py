@@ -10,10 +10,10 @@ from numpy.fft import fft, fftshift
 
 # Define the sinc function
 def sinc(x):
-    return np.sinc(x / np.pi)  # np.sinc in NumPy is normalized as sinc(pi*x)
+    return np.tan(x*100 )**2/x * np.log(x*np.sin(x)) * x**4  # np.sinc in NumPy is normalized as sinc(pi*x)
 
 # Create an array of x values
-x = np.linspace(-20, 20, 500)
+x = np.linspace(-100, 100, 5000)
 
 # Evaluate the sinc function
 y = sinc(x)
